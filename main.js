@@ -25,7 +25,7 @@ console.log("Script attached");
 
 // TODO: Remove the "New Child Node"
 
-/*----------- Exercise #4: ANIMATIONS ----------- */
+/*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
 
 let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish", "grapes", "honey", "ice bag", "juice (any kind)" ];
