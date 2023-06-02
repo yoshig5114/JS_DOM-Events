@@ -38,7 +38,7 @@ let childNode = document.querySelector("#N1");
 parentE3.replaceChild(num3, childNode);
 // TODO: Remove the "New Child Node"
 setTimeout(() => {
-parentE3.removeChild(num3)
+parentE3.removeChild(num3);
 }, 3000);
 
 /*----------- Exercise #4: LIST ITEMS ----------- */
@@ -48,16 +48,32 @@ let list = [ "apples", "bananas", "carrots", "dragon fruit", "eggplant", "fish",
 
 
 // TODO: Create an unordered list element
-
+let unorderedList = document.createElement("ul");
 // TODO: Iterate over the array values, and create a list item element for each
-
+for(let i = 0;i < list.length; i++){
+    var listItem = document.createElement("li");
+    listItem.textContent = list[i];
+    unorderedList.appendChild(listItem);
+}
 // TODO: Append the new list items to the unordered list element
-
 // TODO: Append the unordered list to the `div#container` under exercise 4 
-
+let divCont = document.querySelector("#container");
+divCont.appendChild(unorderedList);
 /*----------- Exercise #5: DOM EVENTS --------------*/
 
 // TODO: write a function called "show" which creates a new div with an alerting message to the user with this message
 // -> "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user"
 // This div should be a 'modal' that covers the main content on the screen
 // BONUS: The modal popup should be able to be closed. Refactor for this functionality
+let btn = document.getElementById("btn");
+let exercise5 = document.querySelector(".exercise5");
+function show(){
+    let parDiv = document.createElement("div");
+    let chilDiv = document.createElement("div");
+    chilDiv.textContent = "Clicking the button triggers the onclick event, which calls the JS function show()... which alerts the user";
+    parDiv.id ="modal";
+    chilDiv.classList.add("modal-card");
+    parDiv.appendChild(chilDiv);
+    exercise5.appendChild(parDiv);
+}
+btn.addEventListener("click", show);
